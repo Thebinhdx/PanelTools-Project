@@ -7,6 +7,6 @@ Here is some can't upload to github:
 
 Other File You Can Download in Github:
 
-Pass All File in Github: thebinhdxmod
+Pass All File in Github and Google Drive: thebinhdxmod
 
 Soon...
