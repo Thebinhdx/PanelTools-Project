@@ -10,3 +10,7 @@ Picture Showcase: V3 Version
 Sorry The UI dont change the text!
 
 ![Image](https://github.com/Thebinhdx/PanelTools-Project/blob/main/PanelTools.png)
+
+Download Here: [link](https://github.com/Thebinhdx/PanelTools-Project/releases/latest)
+> [!NOTE]
+Only Release version not log only!
