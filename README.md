@@ -13,4 +13,4 @@ Sorry The UI dont change the text!
 
 Download Here: [link](https://github.com/Thebinhdx/PanelTools-Project/releases/latest)
 > [!NOTE]
-Only Release version not log only!
+Only Release version (good) not log only!
