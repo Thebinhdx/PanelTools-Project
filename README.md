@@ -1,6 +1,15 @@
-**🔨TestPanelTools🔨**
+# **🔨TestPanelTools🔨 (Open Project)**
 
-Here is my batch file project i do name TestPanelTools!
+TestPanelTools is a script built on the popular batch programming language dedicated to windows operating system.
+
+If you can improve the feature or have more ideas for other features please send them to me via the following email: **thebinhdx@gmail.com**
+
+**It's distributed under the GNU General Public License v3 (or any later version)**
+
+# Quick Links
+Coming soon...
+
+# Showcase
 
 >[!WARNING]
 **⚠️USING THIS CAREFULLY⚠️**
@@ -14,3 +23,6 @@ Sorry The UI dont change the text!
 Download Here: [link](https://github.com/Thebinhdx/PanelTools-Project/releases/latest)
 > [!NOTE]
 Only Release version (good) not log only!
+
+# Donate
+Coming soon...
