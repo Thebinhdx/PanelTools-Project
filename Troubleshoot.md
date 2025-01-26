@@ -35,4 +35,4 @@ You need to reinstall scripts and report this issues!
 
 ## Error Scripts Not Working or Corrupted:
 
-Yep! This is you need reinstall scripts file or report this issues!
+Yep! This is you need reinstall scripts file or report error!
