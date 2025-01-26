@@ -17,6 +17,17 @@ This error you need to check your file has exist. If file not exist you need to 
 >[!TIP]
 **You can write scripts and delete ui**
 
+## Error 2:
+
+
+This Error by some scripts on main file not working right!
+![Screenshot 2025-01-26 205117](https://github.com/user-attachments/assets/20a8ee35-8843-46c9-8d15-22b12fb2ff65)
+
+You need to reinstall scripts and report this issues!
+
+>[!NOTE]
+**scripts will auto exit in 3 seconds after got this error**
+
 # Other Error:
 
 >[!IMPORTANT]
