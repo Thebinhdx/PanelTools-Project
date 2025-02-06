@@ -4,8 +4,6 @@ TestPanelTools is a script built on the popular batch programming language dedic
 
 If you can improve the feature or have more ideas for other features please send them to me via the following email: **thebinhdx@gmail.com**
 
-**It's distributed under the GNU General Public License v2 (or any later version)**
-
 # Quick Links
 Coming soon...
 
