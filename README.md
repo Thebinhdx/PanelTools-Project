@@ -9,9 +9,6 @@ Coming soon...
 
 # Showcase
 
->[!WARNING]
-**⚠️USING THIS CAREFULLY⚠️**
-
 Picture Showcase: V3 Version
 > [!NOTE]
 Sorry The UI dont change the text!
