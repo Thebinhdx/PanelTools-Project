@@ -9,11 +9,7 @@ Coming soon...
 
 # Showcase
 
-Picture Showcase: V3 Version
-> [!NOTE]
-Sorry The UI dont change the text!
-
-![Image](https://github.com/Thebinhdx/PanelTools-Project/blob/main/PanelTools.png)
+Picture Showcase: Will Update Soon..
 
 Download Here: [link](https://github.com/Thebinhdx/PanelTools-Project/releases/latest)
 > [!NOTE]
