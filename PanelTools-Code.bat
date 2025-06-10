@@ -1,32 +1,4 @@
 @echo off
-:: Define variables
-set "update_url=https://raw.githubusercontent.com/Thebinhdx/PanelTools-Project/refs/heads/main/PanelTools-Code.bat"
-set "temp_file=%TEMP%\update_script.bat"
-
-:: Notify user
-echo Checking for updates...
-
-:: Download the updated script
-powershell -Command "(New-Object System.Net.WebClient).DownloadFile('%update_url%', '%temp_file%')"
-
-:: Check if the download was successful
-if exist "%temp_file%" (
-    echo Update downloaded successfully.
-    
-    :: Replace the current script with the updated one
-    copy /Y "%temp_file%" "%~f0" >nul
-    echo Script updated. Restarting...
-    
-    :: Restart the script
-    start "" "%~f0"
-    exit
-) else (
-    echo Failed to download the update. Continuing with the current version.
-    timeout /t 3 /nobreak >nul
-)
-
-:: Main script logic
-
 set link=https://github.com/thebinhdx/Paneltools-Project
 set version=3.8 Release Candidate 2
 set sversion=3.7431.5_RC
