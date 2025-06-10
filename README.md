@@ -1,6 +1,6 @@
-# **🔨TestPanelTools🔨 (Open Project)**
+# **🔨PanelTools🔨 (Open Project)**
 
-TestPanelTools is a script built on the popular batch programming language dedicated to windows operating system.
+PanelTools is a script built on the popular batch programming language dedicated to windows operating system.
 
 If you can improve the feature or have more ideas for other features please send them to me via the following email: **thebinhdx@gmail.com**
 
