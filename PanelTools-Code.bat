@@ -1,6 +1,6 @@
 @echo off
 :: Define variables
-set "update_url="
+set "update_url=https://raw.githubusercontent.com/Thebinhdx/PanelTools-Project/refs/heads/main/PanelTools-Code.bat"
 set "temp_file=%TEMP%\update_script.bat"
 
 :: Notify user
