@@ -1,8 +1,11 @@
 # **🔨PanelTools🔨 (Open Project)**
 
+>[!NOTE]
+**This project has been archived and is read-only.**
+
 PanelTools is a script built on the popular batch programming language dedicated to windows operating system.
 
-If you can improve the feature or have more ideas for other features please send them to me via the following email: **thebinhdx@gmail.com**
+If you can improve the feature or have more ideas for other features please send them to me via the following email: >**Stop receiving emails**<
 
 # Quick Links
 Coming soon...
