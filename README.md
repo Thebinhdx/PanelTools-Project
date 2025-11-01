@@ -11,6 +11,8 @@
 
 ### [Troubleshooting / Help](https://github.com/Thebinhdx/PanelTools-Project/blob/main/Troubleshoot.md)
 
+### [FAQ](https://github.com/Thebinhdx/PanelTools-Project/blob/main/FAQ.md)
+
 >[!NOTE]
 **If you use old version. Use this troubleshoot:**
 **[Old Troubleshooting / Help](https://github.com/Thebinhdx/PanelTools-Project/blob/main/Old-Troubleshoot.md)**
