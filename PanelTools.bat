@@ -1,8 +1,9 @@
 @echo off
 set link=https://github.com/Thebinhdx/PanelTools-Project/blob/main/Troubleshoot.md
 set version=3.9
-set sversion=3.8224.1
-set nameversion="Recolor UI"
+set "current_version=3.8232.1"
+set "update=Not Update Available"
+set nameversion="UpdateTime"
 
 setlocal EnableDelayedExpansion
 
@@ -39,9 +40,6 @@ set  "_Green="Black" "Green""
 set "_Yellow="Black" "Yellow""
 )
 
-
-title Checking Administrator Requirements!
-
 echo Checking Administrator Requirements...
 
 net session >nul 2>&1
@@ -69,6 +67,47 @@ echo Press Any Key to Exit...
 pause >nul
 exit /b 1
 )
+set "updatelink=https://github.com/Thebinhdx/PanelTools-Project/releases/latest"
+set "version_url=https://raw.githubusercontent.com/Thebinhdx/PanelTools-Project/refs/heads/main/version.txt"
+set "tmpfile=%temp%\latest_version.txt"
+
+echo Checking for updates...
+
+powershell -Command ^
+    "(New-Object System.Net.WebClient).DownloadFile('%version_url%', '%tmpfile%')" ^
+    2>nul
+
+if not exist "%tmpfile%" (
+    echo:
+    call :dk_color %Red% "===Error==="
+    echo Unable to check for updates.
+    echo Error Code: 404/506
+    echo:
+    echo Auto exit in 3 seconds...
+    timeout /t 3 /nobreak >nul
+    exit /b 1
+)
+
+for /f "usebackq tokens=* delims=" %%a in ("%tmpfile%") do set "latest_version=%%a"
+del "%tmpfile%" >nul 2>&1
+
+set "%errorlevel%= "
+
+call :compareVersion "%current_version%" "%latest_version%"
+if %errorlevel%==0 (
+    goto menu
+) else (
+    cls
+    call :dk_color %Green% "A new version is available"
+    call :dk_color2 %Blue% "Download it here:" %_Yellow% " %updatelink%"
+    echo Press any key to continue.
+    pause >nul
+    cls
+    set "update=Update Available"
+    set "updatever=%latest_version%"
+    goto menu
+)
+
 
 :menu
 mode 102,30
@@ -84,11 +123,11 @@ echo   [1] Download Apps and Install Apps       [*]: third party software or    
 echo:                                         other software not created by me                   
 echo            [2] Tweaks [Beta]
 echo:
-echo    [3] Activate Windows and Office [*]   =============-About-============ ========-Donation-=========
+echo    [3] Activate Windows and Office [*]   =============-About-============ =========-Update-==========
 echo:
-echo                                          -Name: PanelTools %nameversion%
+echo                                          -Name: PanelTools %nameversion%        %update%
 echo:                                         -Version: %version%
-echo                [0] Exit                           [%sversion%]
+echo                [0] Exit                           [%current_version%]                       %updatever%
 echo:
 echo ======================================== ================================ ===========================
 echo:
@@ -1188,6 +1227,27 @@ if %_NCS% EQU 1 (
   )
 )
 exit /b
+
+:compareVersion
+setlocal
+set "v1=%~1"
+set "v2=%~2"
+
+for /f "tokens=1-3 delims=." %%a in ("%v1%") do (
+    set /a v1a=%%a, v1b=%%b, v1c=%%c
+)
+for /f "tokens=1-3 delims=." %%a in ("%v2%") do (
+    set /a v2a=%%a, v2b=%%b, v2c=%%c
+)
+
+if %v1a% GTR %v2a% exit /b 0
+if %v1a% LSS %v2a% exit /b 1
+
+if %v1b% GTR %v2b% exit /b 0
+if %v1b% LSS %v2b% exit /b 1
+
+if %v1c% GEQ %v2c% exit /b 0
+exit /b 1
 
 
 :: LEAVE EMPTY BLANK HERE [%sversion%]
