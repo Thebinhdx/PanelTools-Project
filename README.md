@@ -11,6 +11,10 @@
 
 ### [Troubleshooting / Help](https://github.com/Thebinhdx/PanelTools-Project/blob/main/Troubleshoot.md)
 
+>[!NOTE]
+**If you use old version. Use this troubleshoot:**
+**[Old Troubleshooting / Help](https://github.com/Thebinhdx/PanelTools-Project/blob/main/Old-Troubleshoot.md)**
+
 # Showcase
 
 ![Image](https://github.com/Thebinhdx/PanelTools-Project/blob/main/Showcase.png)
