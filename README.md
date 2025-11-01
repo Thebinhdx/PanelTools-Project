@@ -21,7 +21,7 @@
 
 ```
 Latest Version: 3.9
-Release date: 
+Release date: 11-1-2025
 ```
 
 # Donate
