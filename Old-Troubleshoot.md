@@ -1,12 +1,11 @@
-# Troubleshoot:
+<h1 align="center">Old Troubleshoot </h1>
+  
+### <p align="center">For only PanelTools V3.8 Release Candidate 2 and earlier</p>
 
 >[!WARNING]
-**ONLY FOR YOU IF ERROR**
+**Old Version ❌NO LONGER SUPPORT. Please Update your code: [Link](https://github.com/Thebinhdx/PanelTools-Project/releases/latest)**
 
 ## Error 1:
-
->[!NOTE]
-**Normal Error and so Popular**
 
 **⚠️Error by main scripts not found and extensions file not found!⚠️**
 
@@ -16,12 +15,10 @@
 
 ![Screenshot 2025-01-16 172654](https://github.com/user-attachments/assets/c12483d9-70dc-4523-a68d-d4300542074c) ![Screenshot 2025-01-16 172311](https://github.com/user-attachments/assets/241701c1-156c-4e4f-af68-302c6f9a1d7e)
 
-UI scripts not found **(don't worry that)**
-
 This error you need to check your file has exist. If file not exist you need to download from website!
 
 >[!TIP]
-**You can write scripts and delete ui**
+**You can write scripts and delete UI**
 
 ## Error 3:
 
@@ -30,9 +27,6 @@ This error you need to check your file has exist. If file not exist you need to 
 ![Screenshot 2025-01-26 205117](https://github.com/user-attachments/assets/20a8ee35-8843-46c9-8d15-22b12fb2ff65)
 
 You need to reinstall scripts and report this issues!
-
->[!NOTE]
-**scripts will auto exit in 3 seconds after got this error**
 
 # Other Error:
 
