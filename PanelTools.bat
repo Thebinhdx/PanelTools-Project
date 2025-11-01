@@ -58,13 +58,13 @@ if %errorlevel% == 0 (
 
 :continue
 cls
-if %winbuild% LSS 10240 (
+if %winbuild% LSS 22000 (
 %eline%
 call :dk_color %Red% "===Error==="
 echo Unsupported OS version detected [%winbuild%].
 echo Error Code: 1207
 echo:
-call :dk_color %Blue% "HWID Activation is only supported on Windows 10/11."
+call :dk_color %Blue% "Only supported on Windows 11."
 echo Press Any Key to Exit...
 pause >nul
 exit /b 1
