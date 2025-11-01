@@ -5,6 +5,9 @@
 >[!WARNING]
 **Old Version ❌NO LONGER SUPPORT. Please Update your code: [Link](https://github.com/Thebinhdx/PanelTools-Project/releases/latest)**
 
+>[!NOTE]
+**If you use new version. Please use this: [Troubleshoot / Help](https://github.com/Thebinhdx/PanelTools-Project/blob/main/Troubleshoot.md)**
+
 ## Error 1:
 
 **⚠️Error by main scripts not found and extensions file not found!⚠️**
