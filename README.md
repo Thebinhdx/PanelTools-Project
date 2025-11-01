@@ -9,13 +9,9 @@ Coming soon...
 
 # Showcase
 
-Picture Showcase:
-
 ![Image](https://github.com/Thebinhdx/PanelTools-Project/blob/main/Showcase.png)
 
 Download Here: [link](https://github.com/Thebinhdx/PanelTools-Project/releases/latest)
-> [!NOTE]
-Only Release version (good) not log only!
 
 # Donate
 Coming soon...
