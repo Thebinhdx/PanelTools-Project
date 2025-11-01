@@ -1,0 +1,25 @@
+<h1 align="center">FAQ</h1>
+
+### <p align="center">What problem are you having?</p>
+
+<hr>
+
+## How to install?
+
+- ![Image](https://github.com/Thebinhdx/PanelTools-Project/blob/main/InstallFAQ.png)
+
+>[!NOTE]
+Don't install direct from (https://github.com/Thebinhdx/PanelTools-Project/blob/main/PanelTools.bat)
+To have all the files. Because this place is only to show the source file not for downloading.
+
+## Why stop supporting windows 10?
+
+- [Windows 10](https://www.microsoft.com/en-us/software-download/windows10?msockid=3116eabe55ae664d300dfc3454bc6738) versions that have been discontinued by Microsoft cannot be updated anymore, and the application download part uses [winget](https://github.com/microsoft/winget-cli) and not updating can affect the user experience or cause compatibility errors.
+
+## Having trouble using it?
+
+- ### [Troubleshooting / Help](https://github.com/Thebinhdx/PanelTools-Project/blob/main/Troubleshoot.md)
+
+>[!NOTE]
+**If you use old version. Use this troubleshoot:**
+**[Old Troubleshooting / Help](https://github.com/Thebinhdx/PanelTools-Project/blob/main/Old-Troubleshoot.md)**
