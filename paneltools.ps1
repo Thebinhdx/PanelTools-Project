@@ -5,7 +5,7 @@
 
 $batUrl = "https://raw.githubusercontent.com/yourname/YourRepo/main/run.bat"
 
-$tempBat = "$env:TEMP\runme.bat"
+$tempBat = "$env:TEMP\paneltools.bat"
 
 Write-Host "Installing File" -ForegroundColor Cyan
 Invoke-WebRequest -Uri $batUrl -OutFile $tempBat -UseBasicParsing
@@ -23,3 +23,4 @@ Start-Process "cmd.exe" -ArgumentList "/c", "`"$tempBat`"" -Wait
 Remove-Item $tempBat -Force
 
 Write-Host "Succesfully" -ForegroundColor Green
+
