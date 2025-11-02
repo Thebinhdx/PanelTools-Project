@@ -7,7 +7,7 @@ $batUrl = "https://raw.githubusercontent.com/Thebinhdx/PanelTools-Project/refs/h
 
 $tempBat = "$env:TEMP\PanelTools.bat"
 
-Write-Host "Installing File" -ForegroundColor Cyan
+Write-Host "Installing File" -ForegroundColor Yellow
 Invoke-WebRequest -Uri $batUrl -OutFile $tempBat -UseBasicParsing
 
 if (!(Test-Path $tempBat)) {
@@ -16,13 +16,14 @@ if (!(Test-Path $tempBat)) {
 }
 
 # Chạy file batch
-Write-Host "Starting File" -ForegroundColor Yellow
+Write-Host "Starting File" -ForegroundColor Green
 Start-Process "cmd.exe" -ArgumentList "/c", "`"$tempBat`"" -Wait
 
 # Xoá file tạm sau khi chạy
-Remove-Item $tempBat -Force
+Remove-Item $tempBat -Force -ErrorAction SilentlyContinue
 
 Write-Host "Succesfully" -ForegroundColor Green
+
 
 
 
