@@ -8,6 +8,8 @@
 >[!NOTE]
 **If you use new version. Please use this: [Troubleshoot / Help](https://github.com/Thebinhdx/PanelTools-Project/blob/main/Troubleshoot.md)**
 
+<hr>
+
 ## Error 1:
 
 **⚠️Error by main scripts not found and extensions file not found!⚠️**
@@ -21,7 +23,9 @@
 This error you need to check your file has exist. If file not exist you need to download from website!
 
 >[!TIP]
-**You can write scripts and delete UI**
+**You can edit the file to speed up opening.**
+
+<hr>
 
 ## Error 3:
 
@@ -31,11 +35,9 @@ This error you need to check your file has exist. If file not exist you need to 
 
 You need to reinstall scripts and report this issues!
 
-# Other Error:
+<hr>
 
->[!IMPORTANT]
-**THIS ERROR YOU NEED TO REPORT ON ISSUES TAB GITHUB OR DOWNLOAD AGAIN FILE**
+## Crashing or Can't open:
 
-## Error Scripts Not Working or Corrupted:
-
-Yep! This is you need reinstall scripts file or report error!
+>[!WARNING]
+**We will not support if you report bugs in old versions.**
