@@ -17,6 +17,8 @@
 **If you use old version. Use this troubleshoot:**
 **[Old Troubleshooting / Help](https://github.com/Thebinhdx/PanelTools-Project/blob/main/Old-Troubleshoot.md)**
 
+<hr>
+
 # Showcase
 
 ![Image](https://github.com/Thebinhdx/PanelTools-Project/blob/main/Showcase.png)
@@ -25,6 +27,7 @@
 Latest Version: 3.9
 Release date: 11-1-2025
 ```
+<hr>
 
 # Donate
 Coming soon...
