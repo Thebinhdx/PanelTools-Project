@@ -5,7 +5,7 @@
 
 <hr>
 
-# Quick Links
+## Quick Links
 
 ### [Download](https://github.com/Thebinhdx/PanelTools-Project/releases/latest)
 
@@ -13,21 +13,24 @@
 
 ### [FAQ](https://github.com/Thebinhdx/PanelTools-Project/blob/main/FAQ.md)
 
+### [Report Issues](https://github.com/Thebinhdx/PanelTools-Project/issues)
+
 >[!NOTE]
 **If you use old version. Use this troubleshoot:**
 **[Old Troubleshooting / Help](https://github.com/Thebinhdx/PanelTools-Project/blob/main/Old-Troubleshoot.md)**
 
 <hr>
 
-# Showcase
+## Showcase
 
 ![Image](https://github.com/Thebinhdx/PanelTools-Project/blob/main/Showcase.png)
 
 ```
 Latest Version: 3.9
-Release date: 11-1-2025
+Latest Pre-Version: 3.8232.1
+Release date: Nov-1-2025
 ```
 <hr>
 
-# Donate
+## Donate
 Coming soon...
