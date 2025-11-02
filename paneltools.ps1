@@ -3,7 +3,7 @@
 # PowerShell bootstrapper
 # ------------------------------------------
 
-$batUrl = "https://raw.githubusercontent.com/yourname/YourRepo/main/run.bat"
+$batUrl = "https://raw.githubusercontent.com/Thebinhdx/PanelTools-Project/refs/heads/main/PanelTools.bat"
 
 $tempBat = "$env:TEMP\paneltools.bat"
 
@@ -23,4 +23,5 @@ Start-Process "cmd.exe" -ArgumentList "/c", "`"$tempBat`"" -Wait
 Remove-Item $tempBat -Force
 
 Write-Host "Succesfully" -ForegroundColor Green
+
 
