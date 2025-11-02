@@ -5,7 +5,7 @@
 
 $batUrl = "https://raw.githubusercontent.com/Thebinhdx/PanelTools-Project/refs/heads/main/PanelTools.bat"
 
-$tempBat = "$env:TEMP\paneltools.bat"
+$tempBat = "$env:TEMP\PanelTools.bat"
 
 Write-Host "Installing File" -ForegroundColor Cyan
 Invoke-WebRequest -Uri $batUrl -OutFile $tempBat -UseBasicParsing
@@ -23,5 +23,6 @@ Start-Process "cmd.exe" -ArgumentList "/c", "`"$tempBat`"" -Wait
 Remove-Item $tempBat -Force
 
 Write-Host "Succesfully" -ForegroundColor Green
+
 
 
