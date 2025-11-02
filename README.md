@@ -5,6 +5,35 @@
 
 <hr>
 
+## How to Use?
+
+### Method 1:
+- Open **PowerShell**
+- **Copy and Paste** the code below, and press **Enter**:
+- - #### For Windows 11
+  - ```
+    irm https://raw.githubusercontent.com/Thebinhdx/PanelTools-Project/refs/heads/main/paneltools.ps1 | iex
+    ```
+    
+<hr>
+
+### Method 2:
+- Download the script: [PanelTools.cmd](https://github.com/Thebinhdx/PanelTools-Project/blob/main/PanelTools.cmd)
+- Run the script.
+
+<hr>
+
+## Showcase
+
+![Image](https://github.com/Thebinhdx/PanelTools-Project/blob/main/Showcase.png)
+
+```
+Latest Version: 3.9
+Latest Pre-Version: 3.8240.0
+Release date: Nov-2-2025
+```
+<hr>
+
 ## Quick Links
 
 ### [Download](https://github.com/Thebinhdx/PanelTools-Project/releases/latest)
@@ -19,17 +48,6 @@
 **If you use old version. Use this troubleshoot:**
 **[Old Troubleshooting / Help](https://github.com/Thebinhdx/PanelTools-Project/blob/main/Old-Troubleshoot.md)**
 
-<hr>
-
-## Showcase
-
-![Image](https://github.com/Thebinhdx/PanelTools-Project/blob/main/Showcase.png)
-
-```
-Latest Version: 3.9
-Latest Pre-Version: 3.8240.0
-Release date: Nov-2-2025
-```
 <hr>
 
 ## Donate
