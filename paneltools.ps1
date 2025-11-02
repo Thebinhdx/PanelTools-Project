@@ -5,9 +5,9 @@
 
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
 
-$batUrl = "https://raw.githubusercontent.com/Thebinhdx/PanelTools-Project/refs/heads/main/PanelTools.bat"
+$batUrl = "https://raw.githubusercontent.com/Thebinhdx/PanelTools-Project/refs/heads/main/PanelTools.cmd"
 
-$tempBat = "$env:TEMP\PanelTools.bat"
+$tempBat = "$env:TEMP\PanelTools.cmd"
 
 Write-Host "Installing File" -ForegroundColor Yellow
 Invoke-WebRequest -Uri $batUrl -OutFile $tempBat -UseBasicParsing -ErrorAction Stop
@@ -25,6 +25,7 @@ Start-Process "cmd.exe" -ArgumentList "/c", "`"$tempBat`"" -Wait
 Remove-Item $tempBat -Force -ErrorAction SilentlyContinue
 
 Write-Host "Succesfully" -ForegroundColor Green
+
 
 
 
