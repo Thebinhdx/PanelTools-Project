@@ -3,12 +3,14 @@
 # PowerShell bootstrapper
 # ------------------------------------------
 
+[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
+
 $batUrl = "https://raw.githubusercontent.com/Thebinhdx/PanelTools-Project/refs/heads/main/PanelTools.bat"
 
 $tempBat = "$env:TEMP\PanelTools.bat"
 
 Write-Host "Installing File" -ForegroundColor Yellow
-Invoke-WebRequest -Uri $batUrl -OutFile $tempBat -UseBasicParsing
+Invoke-WebRequest -Uri $batUrl -OutFile $tempBat -UseBasicParsing -ErrorAction Stop
 
 if (!(Test-Path $tempBat)) {
     Write-Host "Error: Can't Install File, Code:404" -ForegroundColor Red
@@ -23,6 +25,7 @@ Start-Process "cmd.exe" -ArgumentList "/c", "`"$tempBat`"" -Wait
 Remove-Item $tempBat -Force -ErrorAction SilentlyContinue
 
 Write-Host "Succesfully" -ForegroundColor Green
+
 
 
 
