@@ -5,9 +5,9 @@
 
 <hr>
 
-## How to Use?
+## ❓How to Use?
 
-### Method 1:
+### ⬇️Method 1:
 - Open **PowerShell**
 - **Copy and Paste** the code below, and press **Enter**:
 - - #### For Windows 11
@@ -17,13 +17,13 @@
     
 <hr>
 
-### Method 2:
+### ⬇️Method 2:
 - Download the script: [PanelTools.cmd](https://github.com/Thebinhdx/PanelTools-Project/blob/main/PanelTools.cmd)
 - Run the script.
 
 <hr>
 
-## Showcase
+## 🖼️Showcase
 
 ![Image](https://github.com/Thebinhdx/PanelTools-Project/blob/main/Showcase.png)
 
@@ -34,7 +34,7 @@ Release date: Nov-2-2025
 ```
 <hr>
 
-## Quick Links
+## 🔗Quick Links
 
 ### [Download](https://github.com/Thebinhdx/PanelTools-Project/blob/main/PanelTools.cmd)
 
