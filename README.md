@@ -5,6 +5,9 @@
 
 <hr>
 
+>[!WARNING]
+**The project has been discontinued and has been archived.**
+
 ## ❓How to Use?
 
 ### ⬇️Method 1:
