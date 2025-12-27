@@ -78,10 +78,10 @@ if errorlevel 1 (
     pause >nul
     exit /b 1
 )
-set version=3.9
-set "current_version=3.8248.0"
+set version=4.0
+set "current_version=3.9002.1"
 set "update=  Not Update Available"
-set "nameversion=[FarConnection]"
+set "nameversion=[Updater]"
 set "developermode=0"
 set "updatelink=https://github.com/Thebinhdx/PanelTools-Project/releases/latest"
 set "version_url=https://raw.githubusercontent.com/Thebinhdx/PanelTools-Project/refs/heads/main/version.txt"
