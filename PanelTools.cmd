@@ -1,9 +1,5 @@
 @echo off
 set link=https://github.com/Thebinhdx/PanelTools-Project/blob/main/Troubleshoot.md
-set version=3.9
-set "current_version=3.8248.1"
-set "update=Not Update Available"
-set nameversion="FarConnection"
 
 setlocal EnableDelayedExpansion
 
@@ -82,10 +78,18 @@ if errorlevel 1 (
     pause >nul
     exit /b 1
 )
+set version=3.9
+set "current_version=3.8248.0"
+set "update=  Not Update Available"
+set "nameversion=[FarConnection]"
+set "developermode=0"
 set "updatelink=https://github.com/Thebinhdx/PanelTools-Project/releases/latest"
 set "version_url=https://raw.githubusercontent.com/Thebinhdx/PanelTools-Project/refs/heads/main/version.txt"
 set "tmpfile=%temp%\latest_version.txt"
+set "try=1"
+set "curl=https://github.com/curl/curl/releases/download/curl-8_17_0/curl-8.17.0.zip"
 
+cls
 echo Checking for updates...
 
 powershell -Command ^
@@ -116,16 +120,38 @@ if %errorlevel%==0 (
     goto menu
 ) else (
     cls
-    call :dk_color %Green% "A new version is available"
-    call :dk_color2 %Blue% "Download it here:" %_Yellow% " %updatelink%"
-    echo Press any key to continue.
-    pause >nul
-    cls
     set "update=Update Available"
     set "updatever=%latest_version%"
-    goto menu
+    :updatermenu
+    set "updater= "
+    cls
+    call :dk_color %Green% "A new version is available"
+    call :dk_color2 %Blue% "Download it here:" %_Yellow% " %updatelink%"
+    echo:
+    echo [0] Install Update
+    echo [1] Update Soon...
+    echo:
+    echo NOTE: ENTER YOUR OPTIONS TWICE, this error will be fix soon
+    set /p updater="Enter Your Options: "
+
+    if "%updater%"=="0" goto :update
+    if "%updater%"=="1" goto :menu
+
+    goto updatermenu
 )
 
+    :update
+    cls
+    powershell -command ^
+    "Invoke-WebRequest 'https://raw.githubusercontent.com/Thebinhdx/PanelTools-Project/refs/heads/main/updater.cmd' -OutFile '%~dp0\updater.cmd'"
+    timeout /nobreak /t 3 >nul
+    start "" "%~dp0\updater.cmd"
+    timeout /nobreak /t 3 >nul
+    cls
+    echo App in closing. DON'T PRESS ANY BUTTON.
+    echo:
+    timeout /nobreak /t 3 >nul
+    exit
 
 :menu
 mode 102,30
@@ -143,7 +169,7 @@ echo            [2] Tweaks [Beta]
 echo:
 echo    [3] Activate Windows and Office [*]   =============-About-============ =========-Update-==========
 echo:
-echo                                          -Name: PanelTools %nameversion%        %update%
+echo                                          -Name: PanelTools %nameversion%  %update%
 echo:                                         -Version: %version%
 echo                [0] Exit                           [%current_version%]                       %updatever%
 echo:
