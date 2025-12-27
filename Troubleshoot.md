@@ -53,7 +53,7 @@ Maybe during the update process, you may encounter an error when checking the up
 
 <hr>
 
-## ⚠️Error Updater:
+## ⚠️Error Updater: (Only V4 and Above)
 
 ```
 Nothing Notifications
