@@ -18,6 +18,7 @@ if %errorlevel% == 0 (
 
 title Updater
 cls
+timeout /nobreak /t 10 >nul
 echo Remove Old Version.
 del /f /q "%~dp0\PanelTools.cmd"
 
