@@ -24,7 +24,7 @@ powershell -command ^
 "Invoke-WebRequest 'https://raw.githubusercontent.com/Thebinhdx/PanelTools-Project/refs/heads/main/PanelTools.cmd' -OutFile '%~dp0\PanelTools.cmd'"
 
 echo Starting the New Version.
-start "%~dp0\PanelTools.cmd"
+cmd /c start "" "%~dp0\PanelTools.cmd"
 echo Closing in 3 seconds
 timeout /nobreak /t 3 >nul
 exit
