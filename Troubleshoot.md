@@ -51,3 +51,12 @@ Error Code: 506
 ```
 Maybe during the update process, you may encounter an error when checking the update, but it will not affect you too much. You can press any key to continue using it.
 
+<hr>
+
+## ⚠️Error Updater:
+
+```
+Nothing Notifications
+```
+
+Because the updater is still in the testing phase and not yet perfect, there may be some bugs. Report this [issues](https://github.com/Thebinhdx/PanelTools-Project/issues)
