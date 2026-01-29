@@ -146,7 +146,7 @@ goto updatermenu
     powershell -command ^
     "Invoke-WebRequest 'https://raw.githubusercontent.com/Thebinhdx/PanelTools-Project/refs/heads/main/updater.cmd' -OutFile '%~dp0\updater.cmd'"
     timeout /nobreak /t 3 >nul
-    start "" "%~dp0\updater.cmd"
+    start "" "%~dp0\updater.cmd" 4b9d2Dc0aK2l9Xs0
     timeout /nobreak /t 3 >nul
     cls
     echo App in closing. DON'T PRESS ANY BUTTON.
