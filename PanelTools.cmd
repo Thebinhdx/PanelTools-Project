@@ -79,15 +79,12 @@ if errorlevel 1 (
     exit /b 1
 )
 set version=4.0
-set "current_version=3.9002.1"
+set "current_version=3.9003.2"
 set "update=  Not Update Available"
-set "nameversion=[Updater]"
 set "developermode=0"
 set "updatelink=https://github.com/Thebinhdx/PanelTools-Project/releases/latest"
 set "version_url=https://raw.githubusercontent.com/Thebinhdx/PanelTools-Project/refs/heads/main/version.txt"
 set "tmpfile=%temp%\latest_version.txt"
-set "try=1"
-set "curl=https://github.com/curl/curl/releases/download/curl-8_17_0/curl-8.17.0.zip"
 
 cls
 echo Checking for updates...
@@ -120,27 +117,31 @@ if %errorlevel%==0 (
     goto menu
 ) else (
     cls
-    set "update=Update Available"
-    set "updatever=%latest_version%"
-    :updatermenu
-    set "updater= "
-    cls
-    call :dk_color %Green% "A new version is available"
-    call :dk_color2 %Blue% "Download it here:" %_Yellow% " %updatelink%"
-    echo:
-    echo [0] Install Update
-    echo [1] Update Soon...
-    echo:
-    echo NOTE: ENTER YOUR OPTIONS TWICE, this error will be fix soon
-    set /p updater="Enter Your Options: "
-
-    if "%updater%"=="0" goto :update
-    if "%updater%"=="1" goto :menu
-
-    goto updatermenu
+    goto updaterr
 )
 
+:updaterr
+set "update=Update Available"
+set "updatever=%latest_version%"
+:updatermenu
+set "updater= "
+cls
+call :dk_color %Green% "A new version is available"
+call :dk_color2 %Blue% "Download it here:" %_Yellow% " %updatelink%"
+echo:
+echo [0] Install Update
+echo [1] Update Soon...
+echo:
+echo NOTE: ENTER YOUR OPTIONS TWICE, this error will be fix soon
+set /p updater="Enter Your Options: "
+
+if "%updater%"=="0" goto :update
+if "%updater%"=="1" goto :menu
+
+goto updatermenu
+
     :update
+    del /q /f %~dp0\updater.cmd
     cls
     powershell -command ^
     "Invoke-WebRequest 'https://raw.githubusercontent.com/Thebinhdx/PanelTools-Project/refs/heads/main/updater.cmd' -OutFile '%~dp0\updater.cmd'"
@@ -154,26 +155,26 @@ if %errorlevel%==0 (
     exit
 
 :menu
-mode 102,30
+mode 103,30
 cls
 cls
 title PanelTools
 echo:
 call :dk_color %_Green% "                                           --Paneltools--                                           "
 echo:
-echo ==================MENU================== =============-NOTE-============= =========-Credits-=========
+echo ==================-MENU-================== =============-NOTE-============= =========-Credits-=========
 echo:
-echo   [1] Download Apps and Install Apps       [*]: third party software or        Thebinhdx [Owner]
-echo:                                         other software not created by me                   
+echo        [1] Download/Install Apps             [*]: third party software or        Thebinhdx [Owner]
+echo:                                           other software not created by me                   
 echo            [2] Tweaks [Beta]
 echo:
-echo    [3] Activate Windows and Office [*]   =============-About-============ =========-Update-==========
+echo    [3] Activate Windows and Office [*]     =============-About-============ =========-Update-==========
 echo:
-echo                                          -Name: PanelTools %nameversion%  %update%
-echo:                                         -Version: %version%
-echo                [0] Exit                           [%current_version%]                       %updatever%
+echo                                            -Version: %version%               %update%
+echo:                                                    [%current_version%]
+echo                [0] Exit                                                                       %updatever%
 echo:
-echo ======================================== ================================ ===========================
+echo ========================================== ================================ ===========================
 echo:
 set /p menu="Enter Your Options: "
 
@@ -236,6 +237,8 @@ echo                 have never downloaded [Windows Package Manager]
 echo       3. If you install this way but is so slow you need to download
 echo                                  manually
 echo:
+echo                        Auto Checking Update Soon...
+echo:
 echo                    [1] Install Package, Repair, Update
 echo:
 echo                            [2] Already Install
@@ -269,6 +272,7 @@ timeout /nobreak /t 3 >nul
 powershell "Add-AppxPackage -Path https://cdn.winget.microsoft.com/cache/source.msix"
 
 echo Completed! You Can Use Now.
+call :dk_color %_Yellow% "NOTE: I dont know this can fix properly this. So you need to check."
 echo:
 echo Press Any Key To Go Back...
 pause >nul
@@ -307,25 +311,25 @@ echo        [9] Tor
 echo:
 echo       [10] Supermium
 echo:
-echo       -Record Tools-                                                                  -Utilities-
+echo       -Record Tools-                                      -Utilities-
 echo:
-echo       [32] OBS Studio       [34] 7-Zip               [44] Malwarebytes            [54] Driver Booster                            [WARNING]
+echo       [32] OBS Studio       [34] 7-Zip               [44] Malwarebytes            [54] Driver Booster                              [WARNING]
 echo:
 echo       [33] Bandicam         [35] AnyDesk             [45] MSI Afterburner         [55] Capcut                     Winget only support some applications not all
 echo:
-echo                             [36] CPU-Z               [46] Nilesoft Shell          [56] IObit Uninstaller
+echo                             [36] CPU-Z               [46] Nilesoft Shell          [56] IObit Uninstaller                            -Custom-
 echo:
-echo                             [37] Crystal Disk        [47] OPAutoClicker           [57] Geforce Now
+echo                             [37] Crystal Disk        [47] OPAutoClicker           [57] Geforce Now                          [100] Install Custom App
 echo:
-echo                             [38] File-Converter      [48] Rainmeter               [58] CCleaner
+echo                             [38] File-Converter      [48] Rainmeter               [58] CCleaner                             [101] Update All
 echo:
 echo                             [39] GPU-Z               [49] Oracle VirtualBox       [59] IObit Unlocker
 echo:
-echo                             [40] HWiNFO              [50] WinRAR                  [60] Custom Install App
+echo                             [40] HWiNFO              [50] WinRAR                  [0] Back
 echo:
-echo                             [41] HWMonitor           [51] Office 365              [61] Update All App
+echo                             [41] HWMonitor           [51] Office 365              
 echo:
-echo                             [42] JDownloader         [52] Java                    [0] Back
+echo                             [42] JDownloader         [52] Java                    
 echo:
 echo                             [43] Lively Wallpaper    [53] Adoptium
 echo:
@@ -333,77 +337,65 @@ echo ===========================================================================
 echo:
 set /p options2="Enter Your Options: "
 
-if "%options2%"=="0" goto next2_1
-if "%options2%"=="61" goto update
-if "%options2%"=="60" goto custom
-if "%options2%"=="59" goto iobitunlock
-if "%options2%"=="58" goto ccleaner
-if "%options2%"=="57" goto nvidia
-if "%options2%"=="56" goto iobitunin
-if "%options2%"=="55" goto capcut
-if "%options2%"=="54" goto drvboot
-if "%options2%"=="53" goto adoptium
-if "%options2%"=="52" goto java
-if "%options2%"=="51" goto office
-if "%options2%"=="50" goto rar
-if "%options2%"=="49" goto virtualbox
-if "%options2%"=="48" goto rainmeter
-if "%options2%"=="47" goto autoclick
-if "%options2%"=="46" goto shell
-if "%options2%"=="45" goto msi
-if "%options2%"=="44" goto malwarebytes
-if "%options2%"=="43" goto livewallpaper
-if "%options2%"=="42" goto jdownload
-if "%options2%"=="41" goto hwmonitor
-if "%options2%"=="40" goto hwinfo
-if "%options2%"=="39" goto gpuz
-if "%options2%"=="38" goto fileconv
-if "%options2%"=="37" goto crydisk
-if "%options2%"=="36" goto cpuz
-if "%options2%"=="35" goto anydesk
-if "%options2%"=="34" goto 7z
-if "%options2%"=="33" goto bandicam
-if "%options2%"=="32" goto obs
+set "id="
+
+for %%a in (
+    "1:Opera.Opera" "2:Opera.OperaGX" "3:Brave.Brave" "4:Google.Chrome" "5:Mozilla.Firefox"
+    "6:CentStudio.CentBrowser" "7:ungoogled-chromium" "8:Microsoft.Edge" "9:TorProject.TorBrowser" "10:win32ss.Supermium"
+    "11:Discord.Discord" "12:Zoom.Zoom" "13:VNGCorp.Zalo" "14:Microsoft.Skype" "15:Microsoft.Teams"
+    "16:chrisant996.Clink" "17:git.git" "18:JanDeDobbeleer.OhMyPosh" "19:OpenJS.NodeJS" "20:Python.Python.3.13"
+    "21:Unity.Unity.2020" "22:Microsoft.VisualStudio.2022.Community" "23:Microsoft.VisualStudioCode"
+    "24:Foxit.PhantomPDF" "25:Foxit.FoxitReader" "26:Notepad++.Notepad++" "27:Valve.Steam"
+    "28:Microsoft.Sysinternals.Autoruns" "30:Microsoft.OneDrive"
+    "32:OBSProject.OBSStudio" "33:BandicamCompany.Bandicam" "34:7zip.7zip" "35:AnyDeskSoftwareGmbH.AnyDesk"
+    "36:CPUID.CPU-Z" "38:AdrienAllard.FileConverter" "39:TechPowerUp.GPU-Z" "40:REALiX.HWiNFO"
+    "41:CPUID.HWMonitor" "42:AppWork.JDownloader" "43:rocksdanister.LivelyWallpaper" "44:Malwarebytes.Malwarebytes"
+    "45:Guru3D.Afterburner" "46:nilesoft.shell" "47:OPAutoClicker.OpAutoClicker" "48:Rainmeter.Rainmeter"
+    "49:Oracle.VirtualBox" "50:RARLab.WinRAR" "51:Microsoft.Office" "52:Oracle.JavaRuntimeEnvironment"
+    "54:IObit.DriverBooster" "55:ByteDance.CapCut" "56:IObit.Uninstaller" "57:Nvidia.GeForceNow"
+    "58:Priform.CCleaner" "59:IObit.IObitUnlocker"
+) do (
+    for /f "tokens=1,2 delims=:" %%b in (%%a) do (
+        if "%options2%"=="%%b" set "id=%%c"
+    )
+)
+
+if defined id (
+    call :install_app %id%
+    goto next2
+)
+
 if "%options2%"=="31" goto visualc
-if "%options2%"=="30" goto onedrive
 if "%options2%"=="29" goto net
-if "%options2%"=="28" goto autorun
-if "%options2%"=="27" goto steam
-if "%options2%"=="26" goto notepad
-if "%options2%"=="25" goto pdfr
-if "%options2%"=="24" goto pdfe
-if "%options2%"=="23" goto vscode
-if "%options2%"=="22" goto vs22
-if "%options2%"=="21" goto unity
-if "%options2%"=="20" goto python
-if "%options2%"=="19" goto nodejs
-if "%options2%"=="18" goto ohmyposh
-if "%options2%"=="17" goto git
-if "%options2%"=="16" goto clink
-if "%options2%"=="15" goto team
-if "%options2%"=="14" goto skype
-if "%options2%"=="13" goto zalo
-if "%options2%"=="12" goto zoom
-if "%options2%"=="11" goto discord
-if "%options2%"=="10" goto supermium
-if "%options2%"=="9" goto tor
-if "%options2%"=="8" goto edge
-if "%options2%"=="7" goto chromium
-if "%options2%"=="6" goto cent
-if "%options2%"=="5" goto firefox
-if "%options2%"=="4" goto chrome
-if "%options2%"=="3" goto brave
-if "%options2%"=="2" goto operagx
-if "%options2%"=="1" goto opera
+if "%options2%"=="100" goto custom
+if "%options2%"=="101" goto update
+if "%options2%"=="37" goto crydisk
+
+echo Option invalid! & timeout /t 2 >nul & goto next2
+goto next2
+
+goto error
+
+:install_app
+cls
+echo Installing: %1...
+call :dk_color %_Yellow% "WARNING: NOT CLOSE THIS WINDOWS"
+winget install %1 --silent
+echo Done. Press any key to exit...
+call :dk_color %_Yellow% "WARNING: If you have error with your app. Please take screenshot and find instruction in Internet"
+pause >nul
+
 goto next2
 
 goto error
 
 :update
 cls
-echo Waiting... Checking Applications
-timeout /t 3 /nobreak >nul
+echo Update All...
+call :dk_color %_Yellow% "WARNING: NOT CLOSE THIS WINDOWS"
 winget update --all
+echo Done. Press any key to exit...
+call :dk_color %_Yellow% "WARNING: If you have error with your app. Please take screenshot and find instruction in Internet"
 goto next2
 
 goto error
@@ -412,7 +404,7 @@ goto error
 cls
 mode 100,30
 :help
-call :dk_color %Red% "                               WARNING THIS IS CUSTOM INSTALL.                                     "
+call :dk_color %Red% "                              WARNING: THIS IS CUSTOM INSTALL.                                     "
 call :dk_color %Red% "PLEASE ENTER YOUR CORRECTLY APP NAME AND YOUR APP YOU WANT INSTALL HAVE SUPPORT THIS INSTALL METHOD"
 echo:
 echo Commands:
@@ -426,257 +418,37 @@ echo:
 set /p custom="Commands> "
 
 if "%custom%"=="search" goto search
-if "%custom%"=="install" goto installcustom
+if "%custom%"=="install" goto install_custom
 if "%custom%"=="back" goto next2
 if "%custom%"=="help" goto help
 
 echo Unknown Command
 goto custom1
 
-goto error
-
 :search
-echo Enter "Back" to go back
-set /p search="Enter Your Name Apps: "
-
-if "%search%"=="back" goto custom1
-
-winget search "%search%"
-echo Enter Any Key To Go Back...
+echo --- Search ---
+set /p csearch="Enter Name: "
+winget search %csearch%
+echo Done. Press any key to exit...
 pause >nul
+
 goto custom1
 
 goto error
 
-:installcustom
-echo Enter "Back" to go back
-set /p installc="Enter Your ID Apps: "
-
-if "%installc%"=="back" goto custom1
-
-winget install "%installc%"
-echo Press Any Key To Go Back...
+:install_custom
+echo --- Search ---
+set /p cid="Enter App ID: "
+call :dk_color %_Yellow% "WARNING: NOT CLOSE THIS WINDOWS"
+winget install %cid%
+echo Done. Press any key to exit...
+call :dk_color %_Yellow% "WARNING: If you have error with your app. Please take screenshot and find instruction in Internet"
 pause >nul
+
 goto custom1
 
 goto error
 
-:iobitunlock
-cls
-winget install IObit.IObitUnlocker
-goto next2
-
-goto error
-:ccleaner
-cls
-winget install Priform.CCleaner
-goto next2
-
-goto error
-
-:nvinow
-cls
-winget install Nvidia.GeForceNow
-goto next2
-
-goto error
-
-:iobitunin
-cls
-winget install IObit.Uninstaller
-goto next2
-
-goto error
-:capcut
-cls
-winget install ByteDance.CapCut
-goto next2
-
-goto error
-:drvboot
-cls
-winget install IObit.DriverBooster
-goto next2
-
-goto error
-:java
-cls
-winget install Oracle.JavaRuntimeEnvironment
-goto next2
-
-goto error
-:office
-cls
-winget install Microsoft.Office
-goto next2
-
-goto error
-:opera
-cls
-winget install Opera.Opera
-goto next2
-
-goto error
-:operagx
-cls
-winget install Opera.OperaGX
-goto next2
-
-goto error
-:brave
-cls
-winget install Brave.Brave
-goto next2
-
-goto error
-:chrome
-cls
-winget install Google.Chrome
-goto next2
-
-goto error
-:firefox
-cls
-winget install Mozilla.Firefox
-goto next2
-:cent
-cls
-winget install CentStudio.CentBrowser
-goto next2
-
-goto error
-:chromium
-cls
-winget install ungoogled-chromium
-goto next2
-
-goto error
-:edge
-cls
-winget install Microsoft.Edge
-goto next2
-
-goto error
-:tor
-cls
-winget install TorProject.TorBrowser
-goto next2
-
-goto error
-:supermium
-cls
-winget install win32ss.Supermium
-goto next2
-
-goto error
-:discord
-cls
-winget install Discord.Discord
-goto next2
-
-goto error
-:zoom
-cls
-winget install Zoom.Zoom
-goto next2
-
-goto error
-:zalo
-cls
-winget install VNGCorp.Zalo
-goto next2
-
-goto error
-:skype
-cls
-winget install Microsoft.Skype
-goto next2
-
-goto error
-:team
-cls
-winget install Microsoft.Teams
-goto next2
-
-goto error
-:clink
-cls
-winget install chrisant996.Clink
-goto next2
-
-goto error
-:git
-cls
-winget install git.git
-goto next2
-
-goto error
-:ohmyposh
-cls
-winget install JanDeDobbeleer.OhMyPosh
-goto next2
-
-goto error
-:nodejs
-cls
-winget install OpenJS.NodeJS
-goto next2
-
-goto error
-:python
-cls
-winget install Python.Python.3.13
-goto next2
-
-goto error
-:unity
-cls
-winget install Unity.Unity.2020
-goto next2
-
-goto error
-:vs22
-cls
-winget install Microsoft.VisualStudio.2022.Community
-goto next2
-
-goto error
-:vscode
-cls
-winget install Microsoft.VisualStudioCode
-goto next2
-
-goto error
-:pdfe
-cls
-winget install Foxit.PhantomPDF
-goto next2
-
-goto error
-:pdfr
-cls
-winget install Foxit.FoxitReader
-goto next2
-
-goto error
-:notepad
-cls
-winget install Notepad++.Notepad++
-goto next2
-
-goto error
-:steam
-cls
-winget install Valve.Steam
-goto next2
-
-goto error
-:autorun
-cls
-winget install Microsoft.Sysinternals.Autoruns
-goto next2
-
-goto error
 :net
 cls
 echo:
@@ -695,6 +467,8 @@ echo                   [5] NET Desktop Runtime 8.0
 echo:
 echo                   [6] NET Desktop Runtime 9.0
 echo:
+echo                   [6] NET Desktop Runtime 10.0
+echo:
 echo                 [7] NET Desktop Runtime Preview
 echo:
 echo                          [0] Go Back
@@ -703,54 +477,19 @@ echo:
 set /p options3="Enter Your Options: "
 
 if "%options3%"=="0" goto next2
-if "%options3%"=="7" goto netpre
-if "%options3%"=="6" goto net9
-if "%options3%"=="5" goto net8
-if "%options3%"=="4" goto net7
-if "%options3%"=="3" goto net6
-if "%options3%"=="2" goto net5
-if "%options3%"=="1" goto net31
+if "%options3%"=="7" goto netpre call :install_app Microsoft.DotNet.DesktopRuntime.Preview
+if "%options3%"=="7" goto net10 call :install_app Microsoft.DotNet.DesktopRuntime.10
+if "%options3%"=="6" goto net9 call :install_app Microsoft.DotNet.DesktopRuntime.9
+if "%options3%"=="5" goto net8 call :install_app Microsoft.DotNet.DesktopRuntime.8
+if "%options3%"=="4" goto net7 call :install_app Microsoft.DotNet.DesktopRuntime.7
+if "%options3%"=="3" goto net6 call :install_app Microsoft.DotNet.DesktopRuntime.6
+if "%options3%"=="2" goto net5 call :install_app Microsoft.DotNet.DesktopRuntime.5
+if "%options3%"=="1" goto net31 call :install_app Microsoft.DotNet.DesktopRuntime.3_1
 
 goto net
 
 goto error
 
-:net31
-cls
-winget install Microsoft.DotNet.DesktopRuntime.3_1
-goto net
-
-goto error
-:net5
-cls
-winget install Microsoft.DotNet.DesktopRuntime.5
-goto net
-
-goto error
-:net6
-cls
-winget install Microsoft.DotNet.DesktopRuntime.6
-goto net
-
-goto error
-:net7
-cls
-winget install Microsoft.DotNet.DesktopRuntime.7
-goto net
-
-goto error
-:net8
-cls
-winget install Microsoft.DotNet.DesktopRuntime.8
-goto net
-
-goto error
-:net9
-cls
-winget install Microsoft.DotNet.DesktopRuntime.9
-goto net
-
-goto error
 :netpre
 cls
 winget install Microsoft.DotNet.DesktopRuntime.Preview
@@ -758,12 +497,6 @@ goto net
 
 goto error
 
-:onedrive
-cls
-winget install Microsoft.OneDrive
-goto next2
-
-goto error
 :visualc
 cls
 echo:
@@ -787,82 +520,16 @@ echo =================================================================
 echo:
 set /p options4="Enter Your Options: "
 if "%options4%"=="0" goto next2
-if "%options4%"=="6" goto 20152022
-if "%options4%"=="5" goto 2013
-if "%options4%"=="4" goto 2012
-if "%options4%"=="3" goto 2010
-if "%options4%"=="2" goto 2008
-if "%options4%"=="1" goto 2005
-goto visualc
-
-goto error
-:2005
-cls
-winget install Microsoft.VCRedist.2005.x64
-goto visualc
-
-goto error
-:2008
-cls
-winget install Microsoft.VCRedist.2008.x64
-goto visualc
-
-goto error
-:2010
-cls
-winget install Microsoft.VCRedist.2010.x64
-goto visualc
-
-goto error
-:2012
-cls
-winget install Microsoft.VCRedist.2012.x64
-goto visualc
-
-goto error
-:2013
-cls
-winget install Microsoft.VCRedist.2013.x64
-goto visualc
-
-goto error
-:20152022
-cls
-winget install Microsoft.VCRedist.2015+.x64
+if "%options4%"=="6" goto 20152022 call :install_app Microsoft.VCRedist.2015+.x64
+if "%options4%"=="5" goto 2013 call :install_app Microsoft.VCRedist.2013.x64
+if "%options4%"=="4" goto 2012 call :install_app Microsoft.VCRedist.2012.x64
+if "%options4%"=="3" goto 2010 call :install_app Microsoft.VCRedist.2010.x64
+if "%options4%"=="2" goto 2008 call :install_app Microsoft.VCRedist.2008.x64
+if "%options4%"=="1" goto 2005 call :install_app Microsoft.VCRedist.2005.x64
 goto visualc
 
 goto error
 
-:obs
-cls
-winget install OBSProject.OBSStudio
-goto next2
-
-goto error
-:bandicam
-cls
-winget install BandicamCompany.Bandicam
-goto next2
-
-goto error
-:7z
-cls
-winget install 7zip.7zip
-goto next2
-
-goto error
-:anydesk
-cls
-winget install AnyDeskSoftwareGmbH.AnyDesk
-goto next2
-
-goto error
-:cpuz
-cls
-winget install CPUID.CPU-Z
-goto next2
-
-goto error
 :crydisk
 cls
 echo:
@@ -879,100 +546,9 @@ echo:
 set /p options5="Enter Your Options: "
 
 if "%options5%"=="0" goto next2
-if "%options5%"=="2" goto mark
-if "%options5%"=="1" goto info
+if "%options5%"=="2" call :install_app CrystalDewWorld.CrystalDiskInfo
+if "%options5%"=="1" call :install_app CrystalDewWorld.CrystalDiskMark
 goto crydisk
-
-goto error
-:info
-cls
-winget install CrystalDewWorld.CrystalDiskInfo
-goto crydisk
-
-goto error
-:mark
-cls
-winget install CrystalDewWorld.CrystalDiskMark
-goto crydisk
-
-goto error
-
-:fileconv
-cls
-winget install AdrienAllard.FileConverter
-goto next2
-
-goto error
-:gpuz
-cls
-winget install TechPowerUp.GPU-Z
-goto next2
-
-goto error
-:hwinfo
-cls
-winget install REALiX.HWiNFO
-goto next2
-
-goto error
-:hwmonitor
-cls
-winget install CPUID.HWMonitor
-goto next2
-
-goto error
-:jdownload
-cls
-winget install AppWork.JDownloader
-goto next2
-
-goto error
-:livewallpaper
-cls
-winget install rocksdanister.LivelyWallpaper
-goto next2
-
-goto error
-:malwarebytes
-cls
-winget install Malwarebytes.Malwarebytes
-goto next2
-
-goto error
-:msi
-cls
-winget install Guru3D.Afterburner
-goto next2
-
-goto error
-:shell
-cls
-winget install nilesoft.shell
-goto next2
-
-goto error
-:autoclick
-cls
-winget install OPAutoClicker.OpAutoClicker
-goto next2
-
-goto error
-:rainmeter
-cls
-winget install Rainmeter.Rainmeter
-goto next2
-
-goto error
-:virtualbox
-cls
-winget install Oracle.VirtualBox
-goto next2
-
-goto error
-:rar
-cls
-winget install RARLab.WinRAR
-goto next2
 
 goto error
 
