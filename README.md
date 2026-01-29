@@ -29,7 +29,7 @@
 
 ```
 Latest Version: V4
-Latest Pre-Version: 3.9002.1
+Latest Pre-Version: 3.9003.2
 Release date: Dec-27-2025
 ```
 <hr>
