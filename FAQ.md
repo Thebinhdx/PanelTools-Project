@@ -9,7 +9,7 @@
 
 ### Old Version (V3.9 and Earlier):
 <img width="1910" height="976" alt="InstallFAQ" src="https://github.com/user-attachments/assets/52597926-c680-4bcc-8a9f-d83810a65a7e" />
-Password: thebinhdxmod (Only V3.9 [3.8224.1] and earlier)
+Password: thebinhdxmod (Only V3.8 [3.7431.5_RC] and earlier)
 
 ### New Version (V4 and Above):
 **Download the script: [PanelTools.cmd](https://github.com/Thebinhdx/PanelTools-Project/releases/latest/download/PanelTools.cmd)**
