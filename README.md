@@ -28,7 +28,7 @@
 ![Image](https://github.com/Thebinhdx/PanelTools-Project/blob/main/Showcase.png)
 
 ```
-Latest Version: V4
+Latest Version: V4 prefix
 Latest Pre-Version: 3.9003.2
 Release date: Dec-27-2025
 ```
