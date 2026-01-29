@@ -36,7 +36,7 @@ Release date: Dec-27-2025
 
 ## 🔗Quick Links
 
-### [Download](https://github.com/Thebinhdx/PanelTools-Project/blob/main/PanelTools.cmd)
+### [Download](https://github.com/Thebinhdx/PanelTools-Project/releases/latest/download/PanelTools.cmd)
 
 ### [Troubleshooting / Help](https://github.com/Thebinhdx/PanelTools-Project/blob/main/Troubleshoot.md)
 
