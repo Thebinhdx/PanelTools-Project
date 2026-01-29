@@ -11,7 +11,7 @@
 <img width="1910" height="976" alt="InstallFAQ" src="https://github.com/user-attachments/assets/52597926-c680-4bcc-8a9f-d83810a65a7e" />
 
 ### New Version (V4 and Above):
-**Download the script: [PanelTools.cmd](https://github.com/Thebinhdx/PanelTools-Project/blob/main/PanelTools.cmd)**
+**Download the script: [PanelTools.cmd](https://github.com/Thebinhdx/PanelTools-Project/releases/latest/download/PanelTools.cmd)**
 
 <hr>
 
