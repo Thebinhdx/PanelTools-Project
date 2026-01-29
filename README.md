@@ -18,7 +18,7 @@
 <hr>
 
 ### ⬇️Method 2:
-- Download the script: [PanelTools.cmd](https://github.com/Thebinhdx/PanelTools-Project/releases/download/3.9003.2/PanelTools.cmd)
+- Download the script: [PanelTools.cmd](https://github.com/Thebinhdx/PanelTools-Project/releases/latest/download/PanelTools.cmd)
 - Run the script.
 
 <hr>
