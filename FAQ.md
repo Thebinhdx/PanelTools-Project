@@ -28,6 +28,15 @@ Password: thebinhdxmod (Only V3.8 [3.7431.5_RC] and earlier)
 
 <hr>
 
+## So what are the plans for other features in the future?
+
+- I also plan to:
+- Upgrade the UI
+- Add more features
+- Probably :)
+
+<hr>
+
 ## Having trouble using it?
 
 - ### [Troubleshooting / Help](https://github.com/Thebinhdx/PanelTools-Project/blob/main/Troubleshoot.md)
