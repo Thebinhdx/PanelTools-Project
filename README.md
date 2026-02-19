@@ -5,6 +5,18 @@
 
 <hr>
 
+## 🔗Quick Links
+
+### [Download](https://github.com/Thebinhdx/PanelTools-Project/releases/latest/download/PanelTools.cmd)
+
+### [Troubleshooting / Help](https://github.com/Thebinhdx/PanelTools-Project/blob/main/Troubleshoot.md)
+
+### [FAQ](https://github.com/Thebinhdx/PanelTools-Project/blob/main/FAQ.md)
+
+### [Report Issues](https://github.com/Thebinhdx/PanelTools-Project/issues)
+
+<hr>
+
 ## ❓How to Use?
 
 ### ⬇️Method 1:
@@ -33,16 +45,6 @@ Latest Pre-Version: 3.9112.1 (V4.1)
 Release date: Dec-27-2025
 ```
 <hr>
-
-## 🔗Quick Links
-
-### [Download](https://github.com/Thebinhdx/PanelTools-Project/releases/latest/download/PanelTools.cmd)
-
-### [Troubleshooting / Help](https://github.com/Thebinhdx/PanelTools-Project/blob/main/Troubleshoot.md)
-
-### [FAQ](https://github.com/Thebinhdx/PanelTools-Project/blob/main/FAQ.md)
-
-### [Report Issues](https://github.com/Thebinhdx/PanelTools-Project/issues)
 
 >[!NOTE]
 **If you use old version. Use this troubleshoot:**
