@@ -33,6 +33,11 @@
 - Download the script: [PanelTools.cmd](https://github.com/Thebinhdx/PanelTools-Project/releases/latest/download/PanelTools.cmd)
 - Run the script.
 
+>[!NOTE]
+>**File are scanned by VirusTotal for safe!**
+>
+>[VirusTotal Report](https://www.virustotal.com/gui/file/cb6c8424a310cad4dc9abf45bd8d027a7ab57272c0ece4891d4da90fc6b3d0d3?nocache=1)
+
 <hr>
 
 ## 🖼️Showcase
