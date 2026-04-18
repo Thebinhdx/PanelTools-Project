@@ -79,15 +79,35 @@ if errorlevel 1 (
     exit /b 1
 )
 set version=4.0
-set "current_version=3.9003.2"
+set "current_version=3.9111.3"
 set "update=  Not Update Available"
-set "developermode=0"
+set "earlyaccessmode=0"
+set "devmode=0"
 set "updatelink=https://github.com/Thebinhdx/PanelTools-Project/releases/latest"
 set "version_url=https://raw.githubusercontent.com/Thebinhdx/PanelTools-Project/refs/heads/main/version.txt"
 set "tmpfile=%temp%\latest_version.txt"
 
 cls
 echo Checking for updates...
+
+if "%devmode%"=="1" (
+    set "devnoti="
+    cls
+    call :dk_color %_Yellow% "WARNING! THIS IS DEVELOPER VERSION."
+    call :dk_color %Red% "Bug, Error and Some feature in build"
+    echo:
+    echo Continue?
+    echo:
+    echo [1] Continue
+    echo:
+    echo [2] Use release version.
+    echo:
+    echo [0] Exit
+    set /p inputdev="Choose your options: "
+    if "%inputdev%"=="1" goto menu
+    if "%inputdev%"=="2" goto update
+    if "%inputdev%"=="0" exit
+)
 
 powershell -Command ^
     "(New-Object System.Net.WebClient).DownloadFile('%version_url%', '%tmpfile%')" ^
@@ -124,7 +144,6 @@ if %errorlevel%==0 (
 set "update=Update Available"
 set "updatever=%latest_version%"
 :updatermenu
-set "updater= "
 cls
 call :dk_color %Green% "A new version is available"
 call :dk_color2 %Blue% "Download it here:" %_Yellow% " %updatelink%"
@@ -141,8 +160,10 @@ if "%updater%"=="1" goto :menu
 goto updatermenu
 
     :update
-    del /q /f %~dp0\updater.cmd
     cls
+    echo Removing Old Updater...
+    del /q /f %~dp0\updater.cmd
+    timeout /t 2 /nobreak >nul
     powershell -command ^
     "Invoke-WebRequest 'https://raw.githubusercontent.com/Thebinhdx/PanelTools-Project/refs/heads/main/updater.cmd' -OutFile '%~dp0\updater.cmd'"
     timeout /nobreak /t 3 >nul
@@ -222,6 +243,18 @@ goto error
 
 :next2_1
 cls
+set "recommend= "
+:: Checking Winget installed
+set "%errorlevel%= "
+winget --version >nul 2>&1
+
+if %errorlevel% equ 0 (
+   set "wingetstatus=Already Install"
+) else (
+   set "wingetstatus=Not found"
+   set "recommend=[*]"
+)
+
 mode 80,30
 echo:
 call :dk_color %_Yellow% "                                --WARNING--                                "
@@ -237,9 +270,9 @@ echo                 have never downloaded [Windows Package Manager]
 echo       3. If you install this way but is so slow you need to download
 echo                                  manually
 echo:
-echo                        Auto Checking Update Soon...
+call :dk_color2 %_White% "                       Winget Status:" %_Yellow% " %wingetstatus%"
 echo:
-echo                    [1] Install Package, Repair, Update
+echo                    [1] Install Package, Repair, Update %recommend%
 echo:
 echo                            [2] Already Install
 echo:
@@ -370,6 +403,7 @@ if "%options2%"=="29" goto net
 if "%options2%"=="100" goto custom
 if "%options2%"=="101" goto update
 if "%options2%"=="37" goto crydisk
+if "%options2%"=="0" goto menu
 
 echo Option invalid! & timeout /t 2 >nul & goto next2
 goto next2
@@ -382,7 +416,7 @@ echo Installing: %1...
 call :dk_color %_Yellow% "WARNING: NOT CLOSE THIS WINDOWS"
 winget install %1 --silent
 echo Done. Press any key to exit...
-call :dk_color %_Yellow% "WARNING: If you have error with your app. Please take screenshot and find instruction in Internet"
+call :dk_color %_Yellow% "NOTE: If you have error with your app. Please take screenshot and find instruction in Internet"
 pause >nul
 
 goto next2
@@ -395,7 +429,7 @@ echo Update All...
 call :dk_color %_Yellow% "WARNING: NOT CLOSE THIS WINDOWS"
 winget update --all
 echo Done. Press any key to exit...
-call :dk_color %_Yellow% "WARNING: If you have error with your app. Please take screenshot and find instruction in Internet"
+call :dk_color %_Yellow% "NOTE: If you have error with your app. Please take screenshot and find instruction in Internet"
 goto next2
 
 goto error
@@ -442,7 +476,7 @@ set /p cid="Enter App ID: "
 call :dk_color %_Yellow% "WARNING: NOT CLOSE THIS WINDOWS"
 winget install %cid%
 echo Done. Press any key to exit...
-call :dk_color %_Yellow% "WARNING: If you have error with your app. Please take screenshot and find instruction in Internet"
+call :dk_color %_Yellow% "NOTE: If you have error with your app. Please take screenshot and find instruction in Internet"
 pause >nul
 
 goto custom1
@@ -590,34 +624,37 @@ goto error
 
 :tweaks
 cls
-mode 102,30
+mode 150,45
 echo:
 call :dk_color %_Green% "                                              -Tweaks-                                              "
 call :dk_color %_Green% "                                        [Version: 1.4_beta]                                       "
 echo:
-echo ======================================================================================================
+echo =================================================================================================================== ============[Status]============
 echo:
-echo      [1] Delete Temp Files               [9] Disable Location Tracking                     [0] Exit
+echo      [1] Delete Temp Files               [9] Disable Location Tracking                     [0] Exit                 [ ] Disable ConsumerFeatures
 echo:
-echo      [2] Disable ConsumerFeatures        [10] Disable Storage Sense
+echo      [2] Disable ConsumerFeatures        [10] Disable Storage Sense                        -Restore-                [ ] Disable Activity History
 echo:
-echo      [3] Disable Activity History        [11] Disable Wifi Sense
+echo      [3] Disable Activity History        [11] Disable Wifi Sense                                                    [ ] Disable Telemetry
 echo:
-echo      [4] Disable Telemetry               [12] Enable End-Task with Right-Click
+echo      [4] Disable Telemetry               [12] Enable End-Task with Right-Click      [101] Use Restore Point         [ ] Disable GameDVR
 echo:
-echo      [5] Disable GameDVR                 [13] Run Disk Cleanup [Manual]
+echo      [5] Disable GameDVR                 [13] Run Disk Cleanup [Manual]              [102] Reinstall Edge           [ ] Disable Hibernation
 echo:
-echo      [6] Disable Hibernation             [14] Disable Windows 7 Telemetry
+echo      [6] Disable Hibernation             [14] Disable Windows 7 Telemetry           [103] Enable Wifi Sense         [ ] Disable Homegroup
 echo:
-echo      [7] Disable Homegroup               [15] Set Hibernation as default
+echo      [7] Disable Homegroup               [15] Set Hibernation as default             [104] Reset Default [*]        [ ] Disable Location Tracking
 echo:
-echo      [8] Prefer IPv4 Over IPv6           [16] Debloat Edge [Wifi Only/Open Sources]
-echo ======================================================================================================
-echo                                               -Note-
+echo      [8] Prefer IPv4 Over IPv6           [16] Debloat Edge [Wifi Only/Open Sources]                                 [ / ] Disable Storage/Wifi Sense
 echo:
-echo                             Something Tweaks will need reboot or sign out.
-echo                                Some tweak will only work with regedit!
-echo                        =======================================================
+echo =================================================================================================================== ================================
+echo                                                          -Note-
+echo:
+echo                                      Something Tweaks will need reboot or sign out.
+echo                                         Some tweak will only work with regedit!
+echo:
+echo                                                   [*]: NOT RECOMMENDED
+echo =================================================================================================================== ================================
 echo:
 set /p options6="Enter Your Options: "
 
@@ -641,6 +678,7 @@ if "%options6%"=="1" goto dtf
 goto tweaks
 
 goto error
+
 :dtf
 cls
 del /q/f/s %TEMP%\*
