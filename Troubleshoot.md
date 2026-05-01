@@ -8,7 +8,7 @@
 
 ```
 Unknown Reason
-Error Code:0
+Error Code: 0
 ```
 
 Please Reinstall your scripts or Update to new version!
@@ -21,7 +21,7 @@ And Report this [issues](https://github.com/Thebinhdx/PanelTools-Project/issues)
 
 ```
 Only Support Windows 11
-Error Code:1207
+Error Code: 1207
 ```
 
 Update your PC to windows 11 or use PanelTools old version (NOT RECOMMEND)
