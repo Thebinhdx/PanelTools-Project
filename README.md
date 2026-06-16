@@ -45,8 +45,7 @@
 ![Image](https://github.com/Thebinhdx/PanelTools-Project/blob/main/Showcase.png)
 
 ```
-Latest Release Version: V4 Small update & Fix
-Latest Pre-Version: 3.9112.1 (V4.1)
+Latest Release Version: V4 Tiny update (3.9111.5)
 Release date: Apr-18-2026 (Latest version)
 ```
 <hr>
