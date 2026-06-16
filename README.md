@@ -1,7 +1,7 @@
 <h1 align="center">🔨PanelTools🔨</h1>
 
 <p align="center">PanelTools is a script built on the popular batch programming language dedicated to windows operating system.</p>
-<p align="center">If you can improve the feature or have more ideas for other features please send them to me via the following email: thebinhdx@gmail.com</p>
+<p align="center">If you can improve the feature or have more ideas for other features please send them to me via the following email: ----------------</p>
 
 <hr>
 
