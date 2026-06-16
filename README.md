@@ -46,7 +46,7 @@
 
 ```
 Latest Release Version: V4 Tiny update (3.9111.5)
-Release date: Apr-18-2026 (Latest version)
+Release date: June-16-2026 (Latest version)
 ```
 <hr>
 
