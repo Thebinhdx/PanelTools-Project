@@ -79,7 +79,7 @@ if errorlevel 1 (
     exit /b 1
 )
 set version=4.0
-set "current_version=3.9111.3"
+set "current_version=3.9111.5"
 set "update=  Not Update Available"
 set "earlyaccessmode=0"
 set "devmode=0"
@@ -162,17 +162,16 @@ goto updatermenu
     :update
     cls
     echo Removing Old Updater...
-    del /q /f %~dp0\updater.cmd
+    del /q /f %~dp0\UpdaterTools.cmd
     timeout /t 2 /nobreak >nul
     powershell -command ^
-    "Invoke-WebRequest 'https://raw.githubusercontent.com/Thebinhdx/PanelTools-Project/refs/heads/main/updater.cmd' -OutFile '%~dp0\updater.cmd'"
+    "Invoke-WebRequest 'https://raw.githubusercontent.com/Thebinhdx/PanelTools-Project/refs/heads/main/UpdaterTools.cmd' -OutFile '%~dp0\UpdaterTools.cmd'"
     timeout /nobreak /t 3 >nul
-    start "" "%~dp0\updater.cmd" 4b9d2Dc0aK2l9Xs0
-    timeout /nobreak /t 3 >nul
+    start "" "%~dp0\UpdaterTools.cmd" PANLTLS3900V
     cls
     echo App in closing. DON'T PRESS ANY BUTTON.
     echo:
-    timeout /nobreak /t 3 >nul
+    timeout /nobreak /t 2 >nul
     exit
 
 :menu
@@ -189,7 +188,7 @@ echo        [1] Download/Install Apps             [*]: third party software or  
 echo:                                           other software not created by me                   
 echo            [2] Tweaks [Beta]
 echo:
-echo    [3] Activate Windows and Office [*]     =============-About-============ =========-Update-==========
+echo           New features soon...             =============-About-============ =========-Update-==========
 echo:
 echo                                            -Version: %version%               %update%
 echo:                                                    [%current_version%]
@@ -202,7 +201,6 @@ set /p menu="Enter Your Options: "
 if "%menu%"=="0" exit
 if "%menu%"=="1" goto next2_1
 if "%menu%"=="2" goto tweaks1
-if "%menu%"=="3" goto activate
 
 goto menu
 
@@ -766,41 +764,6 @@ echo WARNING! THIS IS OPEN SOURCE FROM OTHERS NOT ME CREATE
 echo Credit by TheBobPony
 powershell "iex(irm https://fixedge.today)"
 goto tweaks
-
-goto error
-
-:activate
-cls
-echo:
-call :dk_color %_Yellow% "                      --WARNING--                      "
-echo:
-echo ==========================================================
-echo             THIS ACTIVATE PRODUCTS IS ILLEGAL
-echo          NOT USING THIS TO ENTERPRISE AND BUSINESS
-echo           IF YOU WANT TO GET THE LEGAL PRODUCTS
-echo            YOU NEED TO BUY THIS FROM MICROSOFT!
-echo             (ONLY WORK ON WINDOWS 8 And Later)
-echo              [OPEN-SOURCES NOT ME CREATE]
-echo ==========================================================
-echo:
-echo         [1] Accept                  [2] Decline
-echo      [NOT RECOMMNEDED]
-echo:
-set /p warning="Enter Your Options: "
-
-if "%warning%"=="1" goto activate1
-if "%warning%"=="2" goto menu
-goto activate
-
-goto error
-
-:activate1
-cls
-title Activation Products
-echo Activation Scripts (Project Massgrave, Offical Website:https://massgrave.dev/credits)
-call :dk_color %_Yellow% "Open-Sources From Others NOT ME CREATE"
-powershell "irm https://get.activated.win | iex"
-goto menu
 
 goto error
 
