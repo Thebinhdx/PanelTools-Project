@@ -50,6 +50,22 @@ Release date: June-16-2026 (Latest version)
 ```
 <hr>
 
+## PanelTools supported version:
+
+| Version           | Supported |
+| ------------------| ----------|
+| V3.1 and earlier version   | ❌ |
+| V3.11 RC1 to V3.2 RC1| ❌ |
+| V3.8 BETA to V3.8 RC2| ❌ |
+| V3.9 [3.8224.1] to V3.9 [3.8248.1]| 🟨 (Support for the version after October-31-2026 will be discontinued) |
+| V4.0 to latest version| ✅ (Partially Supported after V5 Release) |
+
+✅: Fully Supported
+🟨: Partially Supported
+❌: Not Supported
+
+<hr>
+
 >[!NOTE]
 **If you use old version. Use this troubleshoot:**
 **[Old Troubleshooting / Help](https://github.com/Thebinhdx/PanelTools-Project/blob/main/Old-Troubleshoot.md)**
